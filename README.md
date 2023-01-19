@@ -3,6 +3,11 @@
 Este projeto foi desenvolvido para a aprovação de competencia do módulo 4- Banco de dados da plataforma Resilia em parceria com o Senac no programa Programadores Cariocas através da modelagem de um banco de dados de uma instituição de ensino.
 
 Sobre o projeto:
+## Modelo conceitual
+![modelo conceitual img](https://user-images.githubusercontent.com/112868366/213519168-954a0535-c35b-4b36-9e87-de5aeda5ada2.png)
+
+## Modelo lógico
+![modelo logico img](https://user-images.githubusercontent.com/112868366/213519176-edae2a63-7ab5-44a9-aa7c-160d0255cd20.png)
 
 ## Existem outras entidades além dessas três?
 Sim. Há também as entidades: disciplina, professor, salas e turnos.
