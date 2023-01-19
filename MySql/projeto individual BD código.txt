@@ -1,0 +1,69 @@
+CREATE TABLE Aluno 
+( 
+ Cod_Aluno VARCHAR(n) PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+ Nome INT,  
+ Matricula VARCHAR(n),  
+ Endereco INT,  
+ Cep VARCHAR(n),  
+ Tel VARCHAR(n),  
+ idProfessor INT,  
+); 
+
+CREATE TABLE Curso 
+( 
+ Cod_Curso INT PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+ Nome VARCHAR(n),  
+ Modalidade INT,  
+ idTurno INT,  
+); 
+
+CREATE TABLE Disciplina 
+( 
+ Cod_Disc INT PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+ Cod_Prof INT,  
+ Cod_Prog VARCHAR(n),  
+ idCurso INT,  
+); 
+
+CREATE TABLE Turno 
+( 
+ Cod_Turno INT PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+ Turnos INT,  
+ id_Salas INT,  
+); 
+
+CREATE TABLE Salas 
+( 
+ Code_Salas INT PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+ Andares INT,  
+ N_salas INT,  
+ idTurma INT,  
+); 
+
+CREATE TABLE Turma 
+( 
+ Code_Turma INT PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+ Code_Disc INT,  
+ Code_Curso INT,  
+ Data_Inicio DATE,  
+ Code_Salas INT,  
+ Code_Turno INT,  
+ idAluno INT,  
+); 
+
+CREATE TABLE Professor 
+( 
+ Cod_Prof INT PRIMARY KEY NOT NULL AUTO_INCREMENT,  
+ Nome INT,  
+ Sexo CHAR(n),  
+ Especialidade INT,  
+ idDisciplina INT,  
+); 
+
+ALTER TABLE Aluno ADD FOREIGN KEY(idProfessor) REFERENCES Professor (idProfessor)
+ALTER TABLE Curso ADD FOREIGN KEY(idTurno) REFERENCES Turno (idTurno)
+ALTER TABLE Disciplina ADD FOREIGN KEY(idCurso) REFERENCES Curso (idCurso)
+ALTER TABLE Turno ADD FOREIGN KEY(id_Salas) REFERENCES Salas (id_Salas)
+ALTER TABLE Salas ADD FOREIGN KEY(idTurma) REFERENCES Turma (idTurma)
+ALTER TABLE Turma ADD FOREIGN KEY(idAluno) REFERENCES Aluno (idAluno)
+ALTER TABLE Professor ADD FOREIGN KEY(idDisciplina) REFERENCES Disciplina (idDisciplina)
