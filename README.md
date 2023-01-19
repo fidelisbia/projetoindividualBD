@@ -17,7 +17,7 @@ Sim. Há também as entidades: disciplina, professor, salas e turnos.
  Salas (PK) com os tipos: andares e nº de salas.
  Alunos (PK) com os tipo: nome, matricula, endereço, cep e telefone.
 
-### Como essas entidades estão relacionadas?
+## Como essas entidades estão relacionadas?
 Curso está relacionado à disciplina e curso.
 Disciplina está relacionada ao professor.
 Professor está relacionada ao aluno.
